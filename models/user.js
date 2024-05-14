@@ -5,20 +5,22 @@ const { allowedPreferences } = require("../constants");
 const userSchema = new Schema({
   email: {
     type: String,
-    required: [true, "email not provided"],
+    required: true,
     unique: true,
   },
   password: {
     type: String,
-    required: [true, "password not provided"],
+    required: true,
   },
-  preferences: [
-    {
-      type: String,
-      enum: allowedPreferences,
-      default: [allowedPreferences[0]],
-    },
-  ],
+  preferences: {
+    type: [
+      {
+        type: String,
+        enum: allowedPreferences,
+      },
+    ],
+    default: [allowedPreferences[0]],
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);
