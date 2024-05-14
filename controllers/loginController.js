@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const User = require("../models/User");
 const auth = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -39,11 +39,9 @@ auth.post("/", async (req, res) => {
             accessToken: token,
           });
         } else {
-          return res
-            .status(500)
-            .json({
-              error: "Something went wrong! Please try again after sometime",
-            });
+          return res.status(500).json({
+            error: "Something went wrong! Please try again after sometime",
+          });
         }
       } else {
         return res.status(401).json({ error: "Invalid password!" });
@@ -52,12 +50,9 @@ auth.post("/", async (req, res) => {
       return res.status(404).json({ error: "User not found" });
     }
   } catch (err) {
-    return res
-      .status(500)
-      .json({
-        error: err,
-      });
-
+    return res.status(500).json({
+      error: err,
+    });
   }
 });
 

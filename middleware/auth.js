@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-const User = require("../models/user");
+const User = require("../models/User");
 
 const verifyToken = (req, res, next) => {
   if (req.headers?.authorization && process.env.API_SECRET) {
