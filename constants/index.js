@@ -8,4 +8,6 @@ const allowedPreferences = [
   "technology",
 ];
 
-module.exports = { allowedPreferences };
+const newsAPIEndpoint = "http://api.mediastack.com/v1/news";
+
+module.exports = { allowedPreferences, newsAPIEndpoint };
