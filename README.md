@@ -7,7 +7,7 @@ The News Aggregator API fetches news based on user preferences including categor
 ## Features
 
 - User registration and login
-- Fetch news by category
+- Fetch news by user preferences
 - Token-based authentication
 
 ## Setup
@@ -29,8 +29,6 @@ The News Aggregator API fetches news based on user preferences including categor
    Create a .env file in the root directory and add the following:
 
    ```env
-   PORT=3000
-   DB_URI=<your_mongodb_uri>
    JWT_SECRET=<your_jwt_secret>
    MEDIASTACK_API_KEY=<your_mediastack_api_key>
    ```
@@ -54,7 +52,6 @@ The News Aggregator API fetches news based on user preferences including categor
     "email": "string",
     "password": "string",
     "preferences": ["sports"]
-
   }
   ```
 
